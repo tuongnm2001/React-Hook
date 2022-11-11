@@ -19,7 +19,11 @@ const App = () => {
 
   useEffect(() => {
     console.log('run userEffect', Math.floor(Math.random() * 10000 + 1))
-  });
+  }, [name]);
+
+  useEffect(() => {
+    console.log('run userEffect todos', Math.floor(Math.random() * 10000 + 1))
+  }, [todos]);
 
   let onChangeInput = (event) => {
     setName(event.target.value)
