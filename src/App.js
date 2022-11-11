@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Nav from './views/Nav';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Todo from './views/Todo';
 
 const App = () => {
@@ -16,6 +16,10 @@ const App = () => {
     { id: '4', title: 'Do HomeWork 4', type: 'milly' }
 
   ])
+
+  useEffect(() => {
+    console.log('run userEffect', Math.floor(Math.random() * 10000 + 1))
+  });
 
   let onChangeInput = (event) => {
     setName(event.target.value)
