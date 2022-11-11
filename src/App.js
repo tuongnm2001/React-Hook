@@ -26,10 +26,16 @@ const App = () => {
       alert('Empty Name')
       return;
     } else {
-      let newTodos = { id: '4', title: name, type: 'trent' }
+      let newTodos = { id: Math.floor(Math.random() * 10000 + 1), title: name, type: 'trent' }
       setTodos([...todos, newTodos])
       setName('')
     }
+  }
+
+  const deleteDataTodo = (id) => {
+    let currentTodos = todos
+    currentTodos = todos.filter(item => item.id !== id)
+    setTodos(currentTodos)
   }
 
   return (
@@ -41,6 +47,7 @@ const App = () => {
         <Todo
           todos={todos}
           title={'AllCode'}
+          deleteDataTodo={deleteDataTodo}
         />
 
         <Todo
