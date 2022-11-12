@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './views/Nav';
 import { useState, useEffect } from 'react';
 import Todo from './views/Todo';
+import Covid from './views/Covid';
 
 const App = () => {
 
@@ -52,7 +53,9 @@ const App = () => {
         <Nav />
         <img src={logo} className="App-logo" alt="logo" />
         <h2>React Hook with {nameT}</h2>
-        <Todo
+        <h3>Covid 19 tracking in Vietnam</h3>
+        <Covid />
+        {/* <Todo
           todos={todos}
           title={'AllCode'}
           deleteDataTodo={deleteDataTodo}
@@ -63,10 +66,10 @@ const App = () => {
             item.type === 'robbo'
           )}
           title={`Trent todos`}
-        />
+        /> */}
 
-        <input type='text' value={name} onChange={(event) => onChangeInput(event)} />
-        <button onClick={() => handleOnClickButton()}>Click</button>
+        {/* <input type='text' value={name} onChange={(event) => onChangeInput(event)} />
+        <button onClick={() => handleOnClickButton()}>Click</button> */}
       </header>
     </div>
 
