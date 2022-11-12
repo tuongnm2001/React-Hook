@@ -7,6 +7,7 @@ const Todo = (props) => {
     }
 
     return (
+
         <div className='todos-container'>
             <div className="title">
                 {title}

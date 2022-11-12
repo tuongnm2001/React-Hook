@@ -5,7 +5,12 @@ import { useState, useEffect } from 'react';
 import Todo from './views/Todo';
 import Covid from './views/Covid';
 import { CountDown, NewCountDown } from './views/CountDown';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 const App = () => {
 
   let nameT = "Stevie T"
@@ -53,37 +58,36 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Nav />
-        <img src={logo} className="App-logo" alt="logo" />
-        <CountDown
-          onTimesup={onTimesup} />
-        <span>--------------------</span>
-        <NewCountDown
-          onTimesup={onTimesup} />
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Nav />
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
 
-        <h2>React Hook with {nameT}</h2>
-        <h3>Covid 19 tracking in Vietnam</h3>
-        <Covid />
-        {/* <Todo
-          todos={todos}
-          title={'AllCode'}
-          deleteDataTodo={deleteDataTodo}
-        />
-
-        <Todo
-          todos={todos.filter(item =>
-            item.type === 'robbo'
-          )}
-          title={`Trent todos`}
-        /> */}
-
-        {/* <input type='text' value={name} onChange={(event) => onChangeInput(event)} />
-        <button onClick={() => handleOnClickButton()}>Click</button> */}
-      </header>
-    </div>
-
+        <Switch>
+          <Route exact path="/">
+            <Covid />
+          </Route>
+          <Route path="/time">
+            <CountDown
+              onTimesup={onTimesup} />
+            <span>--------------------</span>
+            <NewCountDown
+              onTimesup={onTimesup} />
+          </Route>
+          <Route path="/todo">
+            <Todo
+              todos={todos}
+              title={'AllCode'}
+              deleteDataTodo={deleteDataTodo}
+            />
+            <input type='text' value={name} onChange={(event) => onChangeInput(event)} />
+            <button onClick={() => handleOnClickButton()}>Click</button>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
