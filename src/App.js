@@ -54,7 +54,7 @@ const App = () => {
   }
 
   const onTimesup = () => {
-    alert('Times up')
+    // alert('Times up')
   }
 
   return (
