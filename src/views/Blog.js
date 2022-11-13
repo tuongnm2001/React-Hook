@@ -15,7 +15,7 @@ const Blog = () => {
 
     return (
         <div className="blogs-container">
-            {newData && newData.length > 0 &&
+            {isLoading === false && newData && newData.length > 0 &&
                 newData.map(item => {
                     return (
                         <div className="single-blog" key={item.id}>
@@ -29,6 +29,10 @@ const Blog = () => {
                         </div>
                     )
                 })
+            }
+
+            {isLoading === true &&
+                <div style={{ 'textAlign': 'center !important' }}>Loading data...</div>
             }
         </div>
     )
