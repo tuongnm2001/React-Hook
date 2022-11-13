@@ -16,25 +16,24 @@ const DetailBog = () => {
     }
 
     return (
-        <div>
-            <>
 
-                <div><span onClick={handleBackData} style={{ cursor: 'pointer' }}>&lt; --Back</span></div>
-                <div className="blog-detail">
-                    {dataBlogDetail &&
-                        <>
-                            <div className="title">
-                                Blog ID : {id} --- {isLoading === true ? 'Loading data ...' : dataBlogDetail.title}
-                            </div>
+        <>
+            <div><span onClick={handleBackData} style={{ cursor: 'pointer' }}>&lt; --Back</span></div>
+            <div className="blog-detail">
+                {dataBlogDetail &&
+                    <>
+                        <div className="title">
+                            Blog ID : {id} --- {isLoading === true ? 'Loading data ...' : dataBlogDetail.title}
+                        </div>
 
-                            <div className="content">
-                                {dataBlogDetail.body}
-                            </div>
-                        </>
-                    }
-                </div>
-            </>
-        </div>
+                        <div className="content">
+                            {dataBlogDetail.body}
+                        </div>
+                    </>
+                }
+            </div>
+        </>
+
     )
 }
 

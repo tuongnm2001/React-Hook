@@ -6,6 +6,8 @@ import Todo from './views/Todo';
 import Covid from './views/Covid';
 import Blog from './views/Blog';
 import DetailBog from './views/DetailBlog';
+import AddNewBlog from './views/AddNewBlog';
+import NotFound from './views/NotFound';
 import { CountDown, NewCountDown } from './views/CountDown';
 import {
   BrowserRouter as Router,
@@ -96,6 +98,13 @@ const App = () => {
             <DetailBog />
           </Route>
 
+          <Route path="/add-new-blog">
+            <AddNewBlog />
+          </Route>
+
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </div>
     </Router>

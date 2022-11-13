@@ -10,7 +10,7 @@
         border-radius: 3px;
         padding: 10px;
         margin: 0 10px;
-        max-width: 590px;
+        max-width: 495px;
         text-align: left !important;
 
         .title {
@@ -31,7 +31,37 @@
     margin: 10px;
     min-height: 100px;
 
+
     .content {
         padding-top: 10px;
+    }
+}
+
+.btn-add-new {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.add-new-container {
+    max-width: 400px;
+    border: 1px solid grey;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: 3px;
+
+    .text-add-new {
+        margin: 10px 0;
+    }
+
+    .inputs-data {
+        padding: 5px;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin-left: 10px;
     }
 }
