@@ -4,6 +4,8 @@ import Nav from './views/Nav';
 import { useState, useEffect } from 'react';
 import Todo from './views/Todo';
 import Covid from './views/Covid';
+import Blog from './views/Blog';
+import DetailBog from './views/DetailBlog';
 import { CountDown, NewCountDown } from './views/CountDown';
 import {
   BrowserRouter as Router,
@@ -25,11 +27,11 @@ const App = () => {
   ])
 
   useEffect(() => {
-    console.log('run userEffect', Math.floor(Math.random() * 10000 + 1))
+
   }, [name]);
 
   useEffect(() => {
-    console.log('run userEffect todos', Math.floor(Math.random() * 10000 + 1))
+
   }, [todos]);
 
   let onChangeInput = (event) => {
@@ -85,6 +87,15 @@ const App = () => {
             <input type='text' value={name} onChange={(event) => onChangeInput(event)} />
             <button onClick={() => handleOnClickButton()}>Click</button>
           </Route>
+
+          <Route exact path="/blog">
+            <Blog />
+          </Route>
+
+          <Route path="/blog/:id">
+            <DetailBog />
+          </Route>
+
         </Switch>
       </div>
     </Router>
