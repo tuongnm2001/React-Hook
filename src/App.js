@@ -8,6 +8,7 @@ import Blog from './views/Blog';
 import DetailBog from './views/DetailBlog';
 import AddNewBlog from './views/AddNewBlog';
 import NotFound from './views/NotFound';
+import YoutubeSearch from './views/YoutubeSearch';
 import { CountDown, NewCountDown } from './views/CountDown';
 import {
   BrowserRouter as Router,
@@ -102,9 +103,14 @@ const App = () => {
             <AddNewBlog />
           </Route>
 
+          <Route path='/secret'>
+            <YoutubeSearch />
+          </Route>
+
           <Route path="*">
             <NotFound />
           </Route>
+
         </Switch>
       </div>
     </Router>
